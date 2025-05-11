@@ -30,11 +30,20 @@ https://github.com/zrax/pycdc
     `FILTER=xxxx` to run only certain tests)
 ## Command 
 ````
-pkg update && pkg upgrade -y
-pkg install git cmake clang make python -y
-git clone https://github.com/zrax/pycdc.git && cd pycdc && cmake . && make
-cp pycdc $PREFIX/bin/
-cp pycdas $PREFIX/bin/
+pkg install cmake
+pkg install clang
+pkg install make
+pkg install git
+rm -rf pycdc
+git clone https://github.com/DARK-NET-403/pycdc
+cd pycdc
+ls
+chmod 777 pycdc.cpp
+chmod 777 pycdas.cpp
+cmake .
+make
+mv pycdc $PREFIX/bin
+mv pycdas $PREFIX/bin
 ````
 ## Usage
 **To run pycdas**, the PYC Disassembler:
